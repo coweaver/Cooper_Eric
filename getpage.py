@@ -1,32 +1,28 @@
-import urllib2
+import urllib, urllib2, httplib, base64
 import json
 
 
-url = """
-http://fantasysports.yahooapis.com/fantasy/v2/users;use_login=1/games;game_keys=nfl/teams
-"""
+headers = { 
+    # Basic Authorization Sample 
+    # 'Authorization': 'Basic %s' % base64.encodestring('{username}:{password}'), 
+} 
 
-consumer_data = 
-consumer_data['test']['key'] = 'dj0yJmk9YTRxSTlkWG5heHBhJmQ9WVdrOWMwWlFNazFZTkdFbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD04Mg--' 
-consumer_data['test']['secret'] = '8295393164313926944a1b7209ed6c996d74828d'
+params = urllib.urlencode({'key': 'BB75E8A7-F767-47B0-B17F-BD16E94E3D8B'}) 
 
+try:
+        conn = httplib.HTTPConnection('api.nfldata.apiphany.com')
+        # Specify values for path parameters (shown as {...}) and request body if needed 
 
-
-scope = 'test'
-
-rlist = d['responseData']['results']
-
-request = urllib2.urlopen(url)
-result = request.read()
-d = json.loads(result)
-
-for r in rlist:
-	print r['titleNoFormatting']
-	print r['url']
-
-
-
-
-
+        team = "NYJ"
+        conn.request("GET", "/trial/json/Players/"+team+"?%s" % params, "", headers)
+        response = conn.getresponse()
+        conn.request("GET", "/trial/json/Player/732?%s" % params, "", headers) 
+       
+        data = response.read()
+        
+        print(data) 
+        conn.close()
+except ValueError:
+        print "Oops! didn't work"
 
 
