@@ -21,14 +21,16 @@ data = response.read()
 d = json.loads(data)
 
 
+
+
+
+
 for player in d:
         print player["Name"]
         try:
                 print player["PlayerSeason"]["FantasyPoints"]
         except:
                 print 0
-
-
 conn.close() 
 
 
