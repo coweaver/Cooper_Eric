@@ -1,9 +1,54 @@
 <html>
-<body>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-Type in the three letter code of your team
+<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+<title>
+Fantasy Football
+</title>
+<body><h1>
+Welcome to the Fantasy Football Analyzer
+</h1><br>
+Brought to you by the Peglegs' offense.
+<br><br>
+This engine will give you the top five fantasy football players for the selected NFL team.
+<br><br>
+Select the team to examine.
+<body>
 <br>
 <form method="POST" class="pure-form" action="/">
-<input type="text" class="pure-input-rounded" name="team" placeholder="team"><br>
+<select name="team">
+<option value="ARI">Arizona Cardinals</option>
+<option value="ATL">Atlanta Falcons</option>
+<option value="BAL">Baltimore Ravens</option>
+<option value="BUF">Buffalo Bills</option>
+<option value="CAR">Carolina Panthers</option>
+<option value="CHI">Chicago Bears</option>
+<option value="CIN">Cincinatti Bengals</option>
+<option value="CLE">Cleveland Browns</option>
+<option value="DAL">Dallas Cowboys</option>
+<option value="DEN">Denver Broncos</option>
+<option value="DET">Detroit Lions</option>
+<option value="GB">Green Bay Packers</option>
+<option value="HOU">Houston Texans</option>
+<option value="IND">Indianapolis Colts</option>
+<option value="JAX">Jaxonville Jaguars</option>
+<option value="KC">Kansas City Chiefs</option>
+<option value="MIA">Miami Dolphins</option>
+<option value="MIN">Minnesota Vikings</option>
+<option value="NE">New England Patriots</option>
+<option value="NO">New Orleans Saints</option>
+<option value="NYG">New York Giants</option>
+<option value="NYJ">New York Jets</option>
+<option value="OAK">Oakland Raiders</option>
+<option value="PHI">Philadelphia Eagles</option>
+<option value="PIT">Pittsburgh Steelers</option>
+<option value="SD">San Diego Chargers</option>
+<option value="SEA">Seattle Seahawks</option>
+<option value="SF">San Francisco 49ers</option>
+<option value="STL">St. Louis Rams</option>
+<option value="TB">Tampa Bay Buccaneers</option>
+<option value="TEN">Tennessee Titans</option>
+<option value="WAS">Washington Redskins</option>
+</select>
+<br>
 <input type="submit" class="pure-button pure-button-primary" value="Go">
 </form>

@@ -1,4 +1,13 @@
 <html>
+<body>
+
 The top 5 performers on the {{team}} are:
-{% x in range(5) %}
-{{x}}) Name: {{data[x]["Name"]}}  Points: {{data[x]["PlayerSeason"]["FantasyPoints"]
+<br>
+{% for x in range(5) %}
+<br>
+{{x+1}}) Name: {{data[x]["Name"]}} Points: {{data[x]["PlayerSeason"]["FantasyPoints"]}}
+<br>
+{% endfor %}
+
+</body>
+</html>
