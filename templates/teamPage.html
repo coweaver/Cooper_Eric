@@ -10,6 +10,12 @@ The Top 5 Performers on the {{team}} Are:
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
 
+{% if data == 0 %}
+
+Sorry, we don't have your team's data at this time.
+
+{% else %}
+
 {% for x in range(5) %}
 <br>
 {{x+1}}) Name: {{data[x]["Name"]}} Points: {{data[x]["PlayerSeason"]["FantasyPoints"]}}
@@ -18,5 +24,7 @@ The Top 5 Performers on the {{team}} Are:
 <br>
 <form method="GET" class="pure-form" action="/">
 <input type="submit" class="pure-button pure-button-primary" value="Back">
+
+{% endif %}
 </body>
 </html>

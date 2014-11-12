@@ -29,6 +29,8 @@ def getTop(d):
 		
 		else:
 			top5 = insert(player, top5)
+	if len(top5) < 5:
+		return 0
 	return top5
 		
 

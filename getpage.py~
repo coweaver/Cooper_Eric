@@ -38,7 +38,8 @@ def insert(player,top5):
                 if player["PlayerSeason"] != None:
                         print "success"
                         if player["PlayerSeason"]["FantasyPoints"] > top5[i]["PlayerSeason"]["FantasyPoints"]:
-                                x = len(top5) - 1
+                                print player["Name"]
+				x = len(top5) - 1
                                 top5.append(player)
                                 while(x >= i):
                                         top5[x+1] = top5[x]
@@ -49,7 +50,7 @@ def insert(player,top5):
                                 if(len(top5) > 5):
                                         top5 = top5[0:5]
                                         #print top5	
-                                        return top5
+				return top5
                 i += 1
 	return top5
 				
